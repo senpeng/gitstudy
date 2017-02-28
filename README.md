@@ -2,10 +2,10 @@
 This is study git demo  <br>
 学习git练习  <br>
 
-#####加入暂存区，提交到历史版本，再推送到远程
-  * git add -A
-  * git commit -m "说明"
-  * git push origin master
+#####创建版本库
+  * git add -A                  // 加入暂存区
+  * git commit -m "说明"         // 提交到历史版本
+  * git push origin master      //再推送到远程
 
 ######小结：
     * 初始化一个Git仓库，使用git init命令。
@@ -27,11 +27,11 @@ This is study git demo  <br>
 ######小结：
     * 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
 
-#####回退版本  <br>
+#####版本回退  <br>
   * git reset --hard HEAD^  //回到上一个版本
   * git reset --hard commit id(版本号)  //回到某个版本
   * 上一个版本就是HEAD^，上上一个版本就是HEAD^^，往上100个版本 HEAD~100
-  
+
 ######小结：
     * HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
     * 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
