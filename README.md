@@ -6,6 +6,7 @@ This is study git demo  <br>
   * git add -A
   * git commit -m "说明"
   * git push origin master
+
 ######小结：
     * 初始化一个Git仓库，使用git init命令。
     * 添加文件到Git仓库，分两步：
@@ -15,12 +16,14 @@ This is study git demo  <br>
 
 #####查看仓库当前状态
   * git status
+
 ######小结：
     * 要随时掌握工作区的状态，使用git status命令。
 
 #####查看修改内容
   * git diff 文件名
   * git diff HEAD --文件名     //查看工作区与版本库里面最新版本的区别
+
 ######小结：
     * 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
 
@@ -28,6 +31,7 @@ This is study git demo  <br>
   * git reset --hard HEAD^  //回到上一个版本
   * git reset --hard commit id(版本号)  //回到某个版本
   * 上一个版本就是HEAD^，上上一个版本就是HEAD^^，往上100个版本 HEAD~100
+  
 ######小结：
     * HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
     * 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
