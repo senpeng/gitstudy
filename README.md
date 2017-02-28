@@ -101,6 +101,22 @@ This is study git demo  <br>
     * 要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
     * Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
 
+####分支管理
+#####创建于合并分支
+  * 在Git里HEAD指向主分支master，而master指向提交，所以HEAD指向的就是当前分支。
+  * master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点；
+    每次提交，master分支都会向前移动一步，这样，随着不断提交，master分支的线也越来越长。
+  * 当创建新的分支时，例如dev，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上；
+    从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变。
+  * Git分支合并最简单的方法，就是直接把master指向dev的当前提交，就完成了合并。
+
+######小结：
+    * 查看分支：git branch
+    * 创建分支：git branch <name>
+    * 切换分支：git checkout <name>
+    * 创建+切换分支：git checkout -b <name>
+    * 合并某分支到当前分支：git merge <name>
+    * 删除分支：git branch -d <name>
 
 
 </br>
