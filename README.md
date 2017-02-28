@@ -112,7 +112,7 @@ This is study git demo  <br>
 
 ######小结：
     * 查看分支：git branch
-    * 创建分支：git branch <name>
+    * 创建分支：git branch <name>  //git branch命令会列出所有分支，当前分支前面会标一个*号
     * 切换分支：git checkout <name>
     * 创建+切换分支：git checkout -b <name>
     * 合并某分支到当前分支：git merge <name>
