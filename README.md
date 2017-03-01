@@ -32,7 +32,8 @@ This is study git demo  <br>
   * git reset --hard HEAD^  //回到上一个版本
   * git reset --hard commit id(版本号)  //回到某个版本
   * 上一个版本就是HEAD^，上上一个版本就是HEAD^^，往上100个版本 HEAD~100
-  * git log		//查看提交历史
+  * git log					//查看提交历史
+  * git reflog 		 //查看命令历史
 
 ######小结：
     * HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
