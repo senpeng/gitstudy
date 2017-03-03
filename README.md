@@ -156,7 +156,7 @@ This is study git demo  <br>
     * 开发一个新feature，最好新建一个分支；
     * 如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
 
-#####对人协作
+#####多人协作
   * 多人协作的工作模式通常是这样：
     * 1、首先，可以试图用git push origin branch-name推送自己的修改；
     * 2、如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
