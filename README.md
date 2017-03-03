@@ -148,6 +148,15 @@ This is study git demo  <br>
     * 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
     * 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。
 
+#####Feature分支
+  * 每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。
+  * git branch -D <name>  // 强行删除没有合并过的分支。
+
+######小结：
+    * 开发一个新feature，最好新建一个分支；
+    * 如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
+
+
 
 </br>
 </br>
