@@ -114,6 +114,14 @@ This is study git demo  <br>
     * 合并某分支到当前分支：git merge <name>
     * 删除分支：git branch -d <name>
 
+#####创建于合并分支
+  * Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容。
+  * git log --graph --pretty=oneline --abbrev-commit        //查看分支的合并情况
+
+######小结：
+    * 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+    * 用git log --graph命令可以看到分支合并图。
+
 
 </br>
 </br>
