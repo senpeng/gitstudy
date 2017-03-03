@@ -135,6 +135,19 @@ This is study git demo  <br>
     * 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，
       而fast forward合并就看不出来曾经做过合并。
 
+#####Bug分支
+  * 软件开发中，bug就像家常便饭一样。在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。
+  * 当需要修复bug而分支上的工作还没完成时，可以用git stash功能将当前的工作现场“储存”起来，等以后恢复现场后继续工作。
+  * 用git stash list查看“储存”起来的工作现场列表。
+  * 恢复工作现场有两种方法：
+    * 一时用git stash apply恢复，但是恢复后，stash内容并不删除；
+    * 另一种方式是用git stash pop，恢复的同时把stash内容也删了
+  * 可以多次stash，恢复的时候，先用git stash list查看，然后用git stash apply stash@{0}恢复指定的stash
+
+######小结：
+    * 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+    * 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。
+
 
 </br>
 </br>
