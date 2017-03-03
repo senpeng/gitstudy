@@ -29,7 +29,7 @@ This is study git demo  <br>
     * 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
 
 #####版本回退  <br>
-  * git log					//查看提交历史
+  * git log			 //查看提交历史
   * git reflog 		 //查看命令历史
   * git reset --hard HEAD^  //回到上一个版本
   * git reset --hard commit id(版本号)  //回到某个版本
@@ -107,8 +107,8 @@ This is study git demo  <br>
   * Git分支合并最简单的方法，就是直接把master指向dev的当前提交，就完成了合并。
 
 ######小结：
-    * 查看分支：git branch
-    * 创建分支：git branch <name>  //git branch命令会列出所有分支，当前分支前面会标一个*号
+    * 查看分支：git branch       //git branch命令会列出所有分支，当前分支前面会标一个*号
+    * 创建分支：git branch <name>
     * 切换分支：git checkout <name>
     * 创建+切换分支：git checkout -b <name>
     * 合并某分支到当前分支：git merge <name>
