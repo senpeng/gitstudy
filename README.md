@@ -109,15 +109,15 @@
     * Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
 
 ####分支管理
-#####创建于合并分支
+#####创建与合并分支
   * 在Git里HEAD指向主分支master，而master指向提交，所以HEAD指向的就是当前分支。
   * master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点；
     每次提交，master分支都会向前移动一步，这样，随着不断提交，master分支的线也越来越长。
   * 当创建新的分支时，例如dev，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上；
     从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变。
   * Git分支合并最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：
-    * 1、切换回master分支：git checkout master;
-    * 2、把dev分支的工作成果合并到master分支上：git merge dev。
+    * 1）切换回master分支：git checkout master;
+    * 2）把dev分支的工作成果合并到master分支上：git merge dev。
 
 ######小结：
     * 查看分支：git branch       //git branch命令会列出所有分支，当前分支前面会标一个*号
@@ -127,7 +127,7 @@
     * 合并指定分支到当前分支：git merge <name>
     * 删除分支：git branch -d <name>
 
-#####创建于合并分支
+#####解决冲突
   * Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容。
   * git log --graph --pretty=oneline --abbrev-commit        //查看分支的合并情况
 
@@ -137,8 +137,7 @@
 
 #####分支管理策略
   * 通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。
-  * 如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
-  * git merge --no-ff -m "描述" 分支名。
+  * 如果要强制禁用Fast forward模式，可以用命令git merge --no-ff -m "描述" <branchname>，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
   * 分支管理基本原则：
     * 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
     * 干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
