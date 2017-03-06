@@ -137,7 +137,7 @@
 
 #####分支管理策略
   * 通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。
-  * 如果要强制禁用Fast forward模式，使用命名git merge --no-ff -m “描述” <branchname> ，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+  * 如果要强制禁用Fast forward模式，使用命名git merge --no-ff -m “描述” 分支名 ，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
   * 分支管理基本原则：
     * 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
     * 干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
