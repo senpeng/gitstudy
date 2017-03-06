@@ -115,14 +115,16 @@
     每次提交，master分支都会向前移动一步，这样，随着不断提交，master分支的线也越来越长。
   * 当创建新的分支时，例如dev，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上；
     从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变。
-  * Git分支合并最简单的方法，就是直接把master指向dev的当前提交，就完成了合并。
+  * Git分支合并最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：
+    1、切换回master分支：git checkout master;
+    2、把dev分支的工作成果合并到master分支上：git merge dev。
 
 ######小结：
     * 查看分支：git branch       //git branch命令会列出所有分支，当前分支前面会标一个*号
     * 创建分支：git branch <name>
     * 切换分支：git checkout <name>
     * 创建+切换分支：git checkout -b <name>
-    * 合并某分支到当前分支：git merge <name>
+    * 合并指定分支到当前分支：git merge <name>
     * 删除分支：git branch -d <name>
 
 #####创建于合并分支
