@@ -172,6 +172,26 @@ This is study git demo  <br>
     * 建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
     * 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
 
+####标签管理
+  * 发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。
+  * 将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。
+  * Git的标签虽然是版本库的快照，但其实它就是指向某个commit的指针。
+
+#####创建标签
+  * 在Git打标签时，需切换到需要打标签的分支上。
+  * git tag <name>      // 打一个新标签，默认标签是打在最新提交的commit上的。
+  * git tag <tagname> <commit id>       // 给指定的版本打一个新标签。
+  * git tag         // 查看标签。
+  * git show <tagname>      查看标签信息。
+  * git tag -a <tagname> -m "描述" <commit id>      // 创建带有说明的标签，用-a指定标签名，-m指定说明文字。
+  * git tag -s <tagname> -m "描述" <commit id>      // 通过-s用私钥签名一个标签。签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错
+
+######小结：
+    * 命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+    * git tag -a <tagname> -m "..." <commit id> 可以指定标签信息；
+    * git tag -s <tagname> -m "..." <commit id> 可以用PGP签名标签；
+    * 命令git tag可以查看所有标签；
+    * 命令git show <taganme>可以查看标签信息。
 
 </br>
 </br>
