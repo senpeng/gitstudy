@@ -191,7 +191,7 @@
 
 #####创建标签
   * 在Git打标签时，需切换到需要打标签的分支上。
-  * git tag &lt;name&lg;      // 打一个新标签，默认标签是打在最新提交的commit上的。
+  * git tag `<name>`;      // 打一个新标签，默认标签是打在最新提交的commit上的。
   * git tag <tagname> <commit id>       // 给指定的版本打一个新标签。
   * git tag         // 查看标签。
   * git show <tagname>      查看标签信息。
