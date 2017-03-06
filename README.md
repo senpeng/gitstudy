@@ -207,6 +207,32 @@ This is study git demo  <br>
     * 命令git tag -d <tagname>可以删除一个本地标签；
     * 命令git push origin :refs/tags/<tagname>可以删除一个远程标签，需先删除本地标签。
 
+####使用GitHub
+  * 在GitHub上，可以任意Fork开源仓库；
+  * 自己拥有Fork后的仓库的读写权限；
+  * 可以推送pull request给官方仓库来贡献代码。
+
+####自定义Git
+#####忽略特殊文件
+  * 在Git工作区的根目录下创建一个特殊的.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略这些文件。
+  * GitHub已有的各种配置文件，只需要组合一下就可以使用了。在线浏览：[https://github.com/github/gitignore](https://github.com/github/gitignore)。
+  * 忽略文件的原则是：
+    * 1.忽略操作系统自动生成的文件，比如缩略图等；
+    * 2.忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
+    * 3.忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
+  * 当想添加文件到Git，却被.gitignore忽略，添加不了时，可以用 git add -f <filename> 强制添加。
+  * git check-ignore -v <filename>      //查看.gitignore里那条规则过滤了该文件。
+
+######小结：
+    * 忽略某些文件时，需要编写.gitignore；
+    * .gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理。
+
+#####配置别名
+  * git config --global alias.<别名> <原操作>    //例：git config --global alias.st status配置完后，敲 git st 就相当于git status。
+  * --global参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
+  * 配置Git的时候，加上--global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。
+  * 每个仓库的Git配置文件都放在.git/config文件中；而当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中。
+
 </br>
 </br>
 </br>
