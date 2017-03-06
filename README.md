@@ -83,6 +83,11 @@
       但是要小心，只能恢复文件到最新版本，会丢失**最近一次提交后修改的内容**
 
 ####远程仓库
+  * 设置SS加密：
+    * 第1步：创建SSH Key。查看用户主目录下是否有.ssh目录，如果有，再看看该目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。
+      如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：ssh-keygen -t rsa -C "youremail@example.com"。id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+    * 第2步：登陆GitHub，打开“Settings”，“SSH and GPG keys”页面：点“New SSH key”,填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。最后点“Add SSH key”,此时应该就可以看到已经添加的Key了。
+
 #####添加远程库（先有本地库，后有远程库）
   * 关联远程库：git remote add origin git@server-name:path/repo-name.git。
   * 关联后，把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
