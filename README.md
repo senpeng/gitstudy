@@ -3,8 +3,8 @@
 ####安装Git
   * msysgit是Windows版的Git，下载地址[https://git-for-windows.github.io/](https://git-for-windows.github.io/),网速慢的可以使用[国内镜像](https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit)下载。
   * 安装成功后配置：
-    * git config --global user.name "Your Name"
-    * git config --global user.email "email@example.com"
+    * `git config --global user.name "Your Name"`
+    * `git config --global user.email "email@example.com"`
   * 注意`git config`命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
 
 ####本地仓库
@@ -15,17 +15,17 @@
   * `git push origin master`      // 再推送到远程
 
 ######小结：
-    * 初始化一个Git仓库，使用git init命令。
+    * 初始化一个Git仓库，使用`git init`命令。
     * 添加文件到Git仓库，分两步：
-        * 第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；
-        * 第二步，使用命令git commit，完成。
+        * 第一步，使用命令`git add <file>`，注意，可反复多次使用，添加多个文件；
+        * 第二步，使用命令`git commit`，完成。
     * 每次修改，如果不add到暂存区，那就不会加入到commit中。
 
 #####查看仓库当前状态
   * `git status`
 
 ######小结：
-    * 要随时掌握工作区的状态，使用git status命令。
+    * 要随时掌握工作区的状态，使用`git status`命令。
 
 #####查看修改内容
   * `git diff <filename>`            //查看修改内容
