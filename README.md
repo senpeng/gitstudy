@@ -149,12 +149,12 @@
 
 #####Bug分支
   * 软件开发中，bug就像家常便饭一样。在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。
-  * 当需要修复bug而分支上的工作还没完成时，可以用git stash功能将当前的工作现场“储存”起来，等以后恢复现场后继续工作。
-  * 用git stash list查看“储存”起来的工作现场列表。
+  * 当需要修复bug而分支上的工作还没完成时，可以用`git stash`功能将当前的工作现场“储存”起来，等以后恢复现场后继续工作。
+  * 用`git stash list`查看“储存”起来的工作现场列表。
   * 恢复工作现场有两种方法：
-    * 一时用git stash apply恢复，但是恢复后，stash内容并不删除；
-    * 另一种方式是用git stash pop，恢复的同时把stash内容也删了
-  * 可以多次stash，恢复的时候，先用git stash list查看，然后用git stash apply stash@{0}恢复指定的stash
+    * 一时用`git stash apply`恢复，但是恢复后，stash内容并不删除；
+    * 另一种方式是用`git stash pop`，恢复的同时把stash内容也删了
+  * 可以多次stash，恢复的时候，先用`git stash list`查看，然后用`git stash apply stash@{0}`恢复指定的stash
 
 ######小结：
     * 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
@@ -162,7 +162,7 @@
 
 #####Feature分支
   * 每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。
-  * git branch -D <name>  // 强行删除没有合并过的分支。
+  * `git branch -D <name>`  // 强行删除没有合并过的分支。
 
 ######小结：
     * 开发一个新feature，最好新建一个分支；
@@ -170,11 +170,11 @@
 
 #####多人协作
   * 多人协作的工作模式通常是这样：
-    * 1、首先，可以试图用git push origin branch-name推送自己的修改；
-    * 2、如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+    * 1、首先，可以试图用`git push origin branch-name`推送自己的修改；
+    * 2、如果推送失败，则因为远程分支比你的本地更新，需要先用`git pull`试图合并；
     * 3、如果合并有冲突，则解决冲突，并在本地提交；
-    * 4、没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
-  * 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name。
+    * 4、没有冲突或者解决掉冲突后，再用`git push origin branch-name`推送就能成功！
+  * 如果`git pull`提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream branch-name origin/branch-name`。
 
 ######小结：
     * 查看远程库信息，使用git remote -v；
@@ -191,12 +191,12 @@
 
 #####创建标签
   * 在Git打标签时，需切换到需要打标签的分支上。
-  * `git tag <name>`;      // 打一个新标签，默认标签是打在最新提交的commit上的。
-  * git tag <tagname> <commit id>       // 给指定的版本打一个新标签。
-  * git tag         // 查看标签。
-  * git show <tagname>      查看标签信息。
-  * git tag -a <tagname> -m "描述" <commit id>      // 创建带有说明的标签，用-a指定标签名，-m指定说明文字。
-  * git tag -s <tagname> -m "描述" <commit id>      // 通过-s用私钥签名一个标签。签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错
+  * `git tag <name>`;                       // 打一个新标签，默认标签是打在最新提交的commit上的。
+  * `git tag <tagname> <commit id>`         // 给指定的版本打一个新标签。
+  * `git tag`                               // 查看标签。
+  * `git show <tagname>`                    // 查看标签信息。
+  * `git tag -a <tagname> -m "描述" <commit id>`      // 创建带有说明的标签，用-a指定标签名，-m指定说明文字。
+  * `git tag -s <tagname> -m "描述" <commit id>`      // 通过-s用私钥签名一个标签。签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错
 
 ######小结：
     * 命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
@@ -206,12 +206,12 @@
     * 命令git show <taganme>可以查看标签信息。
 
 #####操作标签
-  * git tag -d <tagname>        //删除标签，创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。
-  * git push origin <tagname>   //推送某个标签到远程。
-  * git push origin --tags      //一次性推送全部尚未推送到远程的本地标签。
+  * `git tag -d <tagname>`          //删除标签，创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。
+  * `git push origin <tagname>`     //推送某个标签到远程。
+  * `git push origin --tags`        //一次性推送全部尚未推送到远程的本地标签。
   * 如果标签已经推送到远程，要删除远程标签，分两步：
-    1、先从本地删除：git tag -d <tagname>;
-    2、从远程删除。删除命令也是push，格式：git push origin :refs/tags/<tagname>。
+    1、先从本地删除：`git tag -d <tagname>`;
+    2、从远程删除。删除命令也是push，格式：`git push origin :refs/tags/<tagname>`。
 
 ######小结：
     * 命令git push origin <tagname>可以推送一个本地标签；
@@ -232,15 +232,15 @@
     * 1.忽略操作系统自动生成的文件，比如缩略图等；
     * 2.忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
     * 3.忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
-  * 当想添加文件到Git，却被.gitignore忽略，添加不了时，可以用 git add -f <filename> 强制添加。
-  * git check-ignore -v <filename>      //查看.gitignore里那条规则过滤了该文件。
+  * 当想添加文件到Git，却被.gitignore忽略，添加不了时，可以用 `git add -f <filename>` 强制添加。
+  * `git check-ignore -v <filename>`      //查看.gitignore里那条规则过滤了该文件。
 
 ######小结：
     * 忽略某些文件时，需要编写.gitignore；
     * .gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理。
 
 #####配置别名
-  * git config --global alias.<别名> <原操作>    //例：git config --global alias.st status配置完后，敲 git st 就相当于git status。
+  * `git config --global alias.<别名> <原操作>`    //例：`git config --global alias.st status`配置完后，敲 `git st` 就相当于`git status`。
   * --global参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
   * 配置Git的时候，加上--global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。
   * 每个仓库的Git配置文件都放在.git/config文件中；而当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中。
