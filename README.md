@@ -210,8 +210,8 @@
   * `git push origin <tagname>`     //推送某个标签到远程。
   * `git push origin --tags`        //一次性推送全部尚未推送到远程的本地标签。
   * 如果标签已经推送到远程，要删除远程标签，分两步：
-    1. 先从本地删除：`git tag -d <tagname>`;
-    2. 从远程删除。删除命令也是push，格式：`git push origin :refs/tags/<tagname>`。
+    * 1、先从本地删除：`git tag -d <tagname>`;
+    * 2、从远程删除。删除命令也是push，格式：`git push origin :refs/tags/<tagname>`。
 
 ######小结：
     * 命令git push origin <tagname>可以推送一个本地标签；
