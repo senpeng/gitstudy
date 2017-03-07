@@ -1,4 +1,6 @@
 # gitstudy
+学习Git笔记  
+原文教程：[git 廖雪峰](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
 
 ####安装Git
   * msysgit是Windows版的Git，下载地址[https://git-for-windows.github.io/](https://git-for-windows.github.io/),网速慢的可以使用[国内镜像](https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit)下载。
@@ -247,7 +249,3 @@
 
 </br>
 </br>
-</br>
-</br>
-</br>
-原文：[git 廖雪峰](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
