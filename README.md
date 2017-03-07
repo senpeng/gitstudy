@@ -74,9 +74,9 @@
 
 #####删除文件
   * 当在文件管理器中把没用的文件删了，或者用rm命令删了时，有两种情况：
-    * 一种是确实要从版本库中删除该文件，那就用命令 git rm file 删掉，并且 git commit；
-    * 一种情况是删错了，因为版本库里还有，所以可以用 git checkout -- file 把误删的文件恢复到最新版本。
-  * git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
+    * 一种是确实要从版本库中删除该文件，那就用命令 `git rm <file>` 删掉，并且 `git commit`；
+    * 一种情况是删错了，因为版本库里还有，所以可以用 `git checkout -- <file>` 把误删的文件恢复到最新版本。
+  * `git checkout`其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
 
 ######小结：
     * 命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么就永远不用担心误删，
@@ -85,15 +85,15 @@
 ####远程仓库
   * 设置SS加密：
     * 第1步：创建SSH Key。查看用户主目录下是否有.ssh目录，如果有，再看看该目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。
-      如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：ssh-keygen -t rsa -C "youremail@example.com"。id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+      如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：`ssh-keygen -t rsa -C "youremail@example.com"`。id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
     * 第2步：登陆GitHub，打开“Settings”，“SSH and GPG keys”页面：点“New SSH key”,填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。最后点“Add SSH key”,此时应该就可以看到已经添加的Key了。
 
 #####添加远程库（先有本地库，后有远程库）
-  * 关联远程库：git remote add origin git@server-name:path/repo-name.git。
-  * 关联后，把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+  * 关联远程库：`git remote add origin git@server-name:path/repo-name.git`。
+  * 关联后，把本地库的内容推送到远程，用`git push`命令，实际上是把当前分支master推送到远程。
   * 第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，
     还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
-  * 把本地master分支的最新修改推送至GitHub：git push origin master。
+  * 把本地master分支的最新修改推送至GitHub：`git push origin master`。
 
 ######小结：
     * 要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
@@ -101,7 +101,7 @@
     * 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改。
 
 #####从远程库克隆（先有远程库，后有本地库）
-  * 先在GitHub上创建一个新的仓库，然后使用 git clone git@server-name:path/repo-name.git 克隆一个本地库。
+  * 先在GitHub上创建一个新的仓库，然后使用 `git clone git@server-name:path/repo-name.git` 克隆一个本地库。
   * Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议.
 
 ######小结：
@@ -116,8 +116,8 @@
   * 当创建新的分支时，例如dev，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上；
     从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变。
   * Git分支合并最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：
-    * 1）切换回master分支：git checkout master;
-    * 2）把dev分支的工作成果合并到master分支上：git merge dev。
+    * 1）切换回master分支：`git checkout master`;
+    * 2）把dev分支的工作成果合并到master分支上：`git merge dev`。
 
 ######小结：
     * 查看分支：git branch       //git branch命令会列出所有分支，当前分支前面会标一个*号
@@ -129,7 +129,7 @@
 
 #####解决冲突
   * Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容。
-  * git log --graph --pretty=oneline --abbrev-commit        //查看分支的合并情况
+  * `git log --graph --pretty=oneline --abbrev-commit`        //查看分支的合并情况
 
 ######小结：
     * 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
