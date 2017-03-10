@@ -1,5 +1,5 @@
 # gitstudy
-学习Git笔记  
+学习Git笔记
 原文教程：[git 廖雪峰](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
 
 ####安装Git
